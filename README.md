@@ -1,6 +1,8 @@
 ## divert
 
 [![Travis CI](http://img.shields.io/travis/ypid/ansible-divert.svg?style=flat)](http://travis-ci.org/ypid/ansible-divert)
+[![Ansible Galaxy](http://img.shields.io/badge/galaxy-ypid.divert-660198.svg?style=flat)](https://galaxy.ansible.com/list#/roles/4668)
+[![Platforms](http://img.shields.io/badge/platforms-debian%20/%20ubuntu-lightgrey.svg?style=flat)](#)
 
 
 Simple role for package management aware renaming of files.
@@ -12,6 +14,17 @@ This role is intended to work with all package managers which can be informed ab
 ### Currently supported packages managers
 
 * [dpkg](https://en.wikipedia.org/wiki/Dpkg)
+
+### Installation
+
+This role requires at least Ansible `v1.8.4`. To install it, run:
+
+    ansible-galaxy install ypid.divert
+
+To install via git, run either:
+
+    git clone https://github.com/ypid/ansible-divert.git ypid.divert
+    git submodule add https://github.com/ypid/ansible-divert.git ypid.divert
 
 
 
