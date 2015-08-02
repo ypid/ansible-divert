@@ -1,0 +1,32 @@
+---
+
+galaxy_info:
+  author: Robin Schneider
+  description: Simple role for package management aware renaming of files.
+  license: AGPLv3
+  platforms:
+  - name: Debian
+    versions:
+      - all
+  - name: Ubuntu
+    versions:
+      - all
+  categories:
+    - system
+  min_ansible_version: 1.8.4
+dependencies: []
+ansigenome_info:
+  github_url: "https://github.com/ypid/ansible-divert"
+  git_branch: "master"
+  galaxy_id: ""
+
+  travis: True
+
+  synopsis: |
+    Allows to move files which were installed by a package and to inform the package manager about the change so that it can do the right thing when the moved file is later installed again by a package upgrade. The right thing in this context is to map all new versions to the diverted location and to avoid touching the original file location.
+
+    This role is intended to work with all package managers which can be informed about such changes.
+
+    ### Currently supported packages managers
+
+    * [dpkg](https://en.wikipedia.org/wiki/Dpkg)

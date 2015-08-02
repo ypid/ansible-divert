@@ -1,0 +1,12 @@
+---
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    divert_files_list:
+      - original: '/bin/ls'
+        diverted: '/bin/ls_org'
+        copy: yes
+
+  roles:
+    - ansible-divert

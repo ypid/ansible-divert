@@ -1,0 +1,15 @@
+---
+
+- name: Test for supported package managers
+  assert:
+    that:
+      ansible_pkg_mgr in [
+          'apt',
+      ]
+
+- name: Combine divert file lists
+  set_fact:
+    divert_files_list_combined: '{{ divert_files_list + divert_files_group_list + divert_files_host_list | default([]) }}'
+
+- include: dpkg.yml
+  when: ansible_pkg_mgr == 'apt'
