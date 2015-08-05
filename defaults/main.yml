@@ -23,4 +23,4 @@ divert_files_group_list: []
 ## "Host" list of files to divert
 divert_files_host_list: []
 
-diverted_files_default_suffix: '.diverted'
+diverted_files_default_suffix: '.dpkg-orig'

@@ -5,7 +5,7 @@
   args:
     creates: '{{ item.diverted | default(item.original + diverted_files_default_suffix) }}'
   when: (
-          (item.state is defined and item.state == 'present') or
+          (item.state is string and item.state == 'present') or
           item.state is undefined
         )
   with_items: divert_files_list_combined
@@ -16,7 +16,7 @@
     creates: '{{ item.original }}'
   when: (
           (
-            (item.state is defined and item.state == 'present') or
+            (item.state is string and item.state == 'present') or
             item.state is undefined
           ) and item.copy is defined and item.copy == true
         )
@@ -27,12 +27,12 @@
     path: '{{ item.original }}'
     state: 'absent'
   when: (
-          item.state is defined and item.state == 'absent' and
+          item.state is string and item.state == 'absent' and
           item.force is defined and item.force
         )
   with_items: divert_files_list_combined
 
 - name: dpkg | remove file divert
   command: dpkg-divert --rename --remove '{{ item.original }}'
-  when: (item.state is defined and item.state == 'absent')
+  when: (item.state is string and item.state == 'absent')
   with_items: divert_files_list_combined
