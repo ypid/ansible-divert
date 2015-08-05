@@ -3,7 +3,8 @@
 # original (string, required): File path of the original file.
 # diverted (string, optional, default: original + diverted_files_default_suffix): File path where all new file versions created by package updates are redirected to.
 # state (string, optional, default: 'present'): If 'present', the diversion should be enabled. If 'absent' the diversion will be removed.
-# force (boolean, optional, default: no): If true and state is 'absent' the diversion will be removed even if that means that your modified file has to be deleted first to restore the original version of the package maintainer.
+# force (boolean, optional, default: false): If true and state is 'absent' the diversion will be removed even if that means that your modified file has to be deleted first to restore the original version of the package maintainer.
+# copy (boolean, optional, default: false): Copy the diverted file to the original file (intended when the file is later going to be modified).
 
 ## "Global" list of files to divert
 divert_files_list: []
@@ -11,12 +12,10 @@ divert_files_list: []
 #   - original: '/bin/ls'
 #     diverted: '/bin/ls_org'
 #     copy: yes
-#     ## Copy the diverted file to the original file (intended when the file is later going to be modified).
 #     # state: 'absent'
 #   - original: '/usr/share/X11/xkb/symbols/de'
 #     state: 'absent'
 #     force: yes
-#     ## Force the removal of the diversion by removing the file which is in place of the original file.
 
 ## "Host group" list of files to divert
 divert_files_group_list: []
