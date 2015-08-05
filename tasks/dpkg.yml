@@ -18,7 +18,7 @@
           (
             (item.state is defined and item.state == 'present') or
             item.state is undefined
-          ) and item.copy is defined and item.copy
+          ) and item.copy is defined and item.copy == true
         )
   with_items: divert_files_list_combined
 
