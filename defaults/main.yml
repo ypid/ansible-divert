@@ -15,9 +15,11 @@
 # Examples:
 #
 # .. code: YAML
+#
 #    divert_files_list:
 #      - original: '/usr/bin/man'
 #        diverted: '/usr/local/bin/rtfm'
+#
 divert_files_list: []
 
 
