@@ -1,20 +1,31 @@
 ---
 
-galaxy_info:
-  author: Robin Schneider
-  description: Simple role for package management aware renaming of files.
-  license: AGPLv3
-  platforms:
-  - name: Debian
-    versions:
-      - all
-  - name: Ubuntu
-    versions:
-      - all
-  categories:
-    - system
-  min_ansible_version: 1.8.4
 dependencies: []
+
+galaxy_info:
+
+  author: 'Robin Schneider'
+  description: 'Simple role for package management aware renaming of files.'
+  license: 'GNU Affero General Public License v3'
+  min_ansible_version: '1.8.4'
+
+  platforms:
+
+    - name: Debian
+      versions:
+        - all
+
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+    - system
+    - dpkg
+    - divert
+    - rename
+    - package management
+
 ansigenome_info:
   github_url: "https://github.com/ypid/ansible-divert"
   git_branch: "master"
@@ -22,11 +33,13 @@ ansigenome_info:
 
   travis: True
 
+  license_url: 'https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)'
+
   synopsis: |
-    Allows to move files which were installed by a package and to inform the package manager about the change so that it can do the right thing when the moved file is later installed again by a package upgrade. The right thing in this context is to map all new versions to the diverted location and to avoid touching the original file location.
+    Allows to move files which were installed by a package and to inform the package manager about the change so that it can do the right thing when the moved file is later installed again by a package upgrade. The right thing in this context is to map all new versions to the diverted location and to avoid touching the original file.
 
     This role is intended to work with all package managers which can be informed about such changes.
 
-    ### Currently supported packages managers
+    ### Currently supported package managers
 
     * [dpkg](https://en.wikipedia.org/wiki/Dpkg)

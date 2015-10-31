@@ -1,39 +1,39 @@
 ---
+# Default variables
+# =================
 
-# original (string, required): File path of the original file.
+# .. contents:: Sections
+#    :local:
 #
-# diverted (string, optional, default: original + diverted_files_default_suffix):
-# File path where all new file versions created by package updates are
-# redirected to.
-#
-# state (string, optional, default: 'present'):
-# If 'present', the diversion should be enabled. If 'absent' the diversion will
-# be removed.
-#
-# force (boolean, optional, default: false):
-# If true and state is 'absent' the diversion will be removed even if that
-# means that your modified file has to be deleted first to restore the original
-# version of the package maintainer.
-#
-# copy (boolean, optional, default: false):
-# Copy the diverted file to the original file (intended when the file is later
-# going to be modified).
+# ------------------------------------
+#   File lists to divert
+# ------------------------------------
 
-## "Global" list of files to divert
+# .. envvar:: divert_files_list
+#
+# "Global" list of files to divert.
+# Examples:
+#
+# .. code: YAML
+#    divert_files_list:
+#      - original: '/usr/bin/man'
+#        diverted: '/usr/local/bin/rtfm'
 divert_files_list: []
-# divert_files_list:
-#   - original: '/bin/ls'
-#     diverted: '/bin/ls_org'
-#     copy: yes
-#     # state: 'absent'
-#   - original: '/usr/share/X11/xkb/symbols/de'
-#     state: 'absent'
-#     force: yes
 
-## "Host group" list of files to divert
+
+# .. envvar:: divert_files_group_list
+#
+# "Host group" list of files to divert.
 divert_files_group_list: []
 
-## "Host" list of files to divert
+
+# .. envvar:: divert_files_host_list
+#
+# "Host" list of files to divert.
 divert_files_host_list: []
 
-diverted_files_default_suffix: '.dpkg-orig'
+
+# .. envvar:: divert_file_suffix
+#
+# Default file suffix to use when ``item.diverted`` has not been specified.
+divert_file_suffix: '.dpkg-orig'

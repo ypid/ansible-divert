@@ -2,10 +2,9 @@
 
 - name: Test for supported package managers
   assert:
-    that:
-      ansible_pkg_mgr in [
-          'apt',
-      ]
+    that: ansible_pkg_mgr in [
+            'apt',
+          ]
 
 - name: Combine divert file lists
   set_fact:
