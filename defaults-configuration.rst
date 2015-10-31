@@ -24,7 +24,7 @@ divert_files_list
   ``absent`` the diversion will be removed.
   Defaults to ``present``.
 
-``copy``
+``copy_to_org``
   Optional, boolean. Copy the diverted file to the original file (intended when
   the file is later going to be modified without using a file template).
   Defaults to ``False``.

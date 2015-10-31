@@ -11,7 +11,7 @@
   command: cp '{{ item.diverted | default(item.original + divert_file_suffix) }}' '{{ item.original }}'
   args:
     creates: '{{ item.original }}'
-  when: (item['copy']|d(False))
+  when: (item.copy_to_org|d(False))
   with_items: divert_files_list_combined
 
 - name: dpkg | remove file divert
