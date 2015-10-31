@@ -59,9 +59,11 @@ List of default variables available in the inventory:
 # Examples:
 #
 # .. code: YAML
+#
 #    divert_files_list:
 #      - original: '/usr/bin/man'
 #        diverted: '/usr/local/bin/rtfm'
+#
 divert_files_list: []
 
 
@@ -91,7 +93,7 @@ List of internal variables used by the role:
 ### Authors and license
 
 `divert` role was written by:
-- [Robin Schneider](https://github.com/ypid) | [e-mail](mailto:ypid@riseup.net)
+- [Robin Schneider](http://ypid.de/) | [e-mail](mailto:ypid@riseup.net) | [Twitter](https://twitter.com/ypid) | [GitHub](https://github.com/ypid)
 
 License: [AGPLv3](https://tldrlegal.com/license/gnu-general-public-license-v3-%28gpl-3%29)
 
