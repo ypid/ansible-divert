@@ -6,7 +6,7 @@ galaxy_info:
 
   author: 'Robin Schneider'
   description: 'Simple role for package management aware renaming of files.'
-  license: 'GNU Affero General Public License v3'
+  license: 'AGPL-3.0'
   min_ansible_version: '1.8.4'
 
   platforms:
