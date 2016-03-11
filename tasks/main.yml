@@ -9,9 +9,9 @@
 - name: Combine divert file lists
   set_fact:
     divert_files_list_combined: '{{ (
-      (divert_files_list|default([])) +
-      (divert_files_group_list|default([])) +
-      (divert_files_host_list|default([])) ) | unique }}'
+      (divert_files_list       | default([])  | list ) +
+      (divert_files_group_list | default([])  | list ) +
+      (divert_files_host_list  | default([])) | list )   | unique }}'
 
 - include: dpkg.yml
   when: ansible_pkg_mgr == 'apt'
