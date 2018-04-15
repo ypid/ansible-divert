@@ -35,6 +35,14 @@ divert_files_group_list: []
 divert_files_host_list: []
 
 
+# .. envvar:: divert_combined_files
+#
+# Final list of files to divert.
+divert_combined_files: '{{ divert_files_list +
+                           divert_files_group_list +
+                           divert_files_host_list }}'
+
+
 # .. envvar:: divert_file_suffix
 #
 # Default file suffix to use when ``item.diverted`` has not been specified.
