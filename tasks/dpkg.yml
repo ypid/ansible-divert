@@ -11,7 +11,7 @@
   command: cp '{{ item.diverted | default(item.original + divert_file_suffix) }}' '{{ item.original }}'
   args:
     creates: '{{ item.original }}'
-  when: (item.copy_to_org|d(False))
+  when: (item.state|d('present') == 'present' and item.copy_to_org|d(False))
   with_items: '{{ divert_combined_files }}'
 
 - name: dpkg | remove file divert
