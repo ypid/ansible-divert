@@ -50,41 +50,41 @@ List of default variables available in the inventory:
 #   File lists to divert
 # ------------------------------------
 
-# .. envvar:: divert_files_list
+# .. envvar:: divert__files
 #
 # "Global" list of files to divert.
 # Examples:
 #
 # .. code: YAML
 #
-#    divert_files_list:
+#    divert__files:
 #      - original: '/usr/bin/man'
 #        diverted: '/usr/local/bin/rtfm'
 #
-divert_files_list: []
+divert__files: []
 
 
-# .. envvar:: divert_files_group_list
+# .. envvar:: divert__group_files
 #
 # "Host group" list of files to divert.
-divert_files_group_list: []
+divert__group_files: []
 
 
-# .. envvar:: divert_files_host_list
+# .. envvar:: divert__host_files
 #
 # "Host" list of files to divert.
-divert_files_host_list: []
+divert__host_files: []
 
 
-# .. envvar:: divert_file_suffix
+# .. envvar:: divert__file_suffix
 #
 # Default file suffix to use when ``item.diverted`` has not been specified.
-divert_file_suffix: '.dpkg-orig'
+divert__file_suffix: '.dpkg-orig'
 ```
 
 List of internal variables used by the role:
 
-    divert_files_list_combined
+    divert__files_combined
 
 ### Authors and license
 

@@ -4,7 +4,7 @@ Default variables: configuration
 Some of ``ypid.divert`` variables have more extensive configuration.
 Here you can find documentation and examples for them.
 
-divert_files_list
+divert__files
 -----------------
 
 ``original``
@@ -17,7 +17,7 @@ divert_files_list
 
   .. code:: jinja
 
-     {{ item.original + divert_file_suffix }}
+     {{ item.original + divert__file_suffix }}
 
 ``state``
   Optional, string. If ``present``, the diversion should be enabled. If

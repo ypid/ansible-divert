@@ -9,41 +9,35 @@
 #   File lists to divert
 # ------------------------------------
 
-# .. envvar:: divert_files_list
+# .. envvar:: divert__files
 #
 # "Global" list of files to divert.
 # Examples:
 #
 # .. code: YAML
 #
-#    divert_files_list:
-#      - original: '/usr/bin/man'
+#    divert__files:
+#      - path: '/usr/bin/man'
 #        diverted: '/usr/local/bin/rtfm'
 #
-divert_files_list: []
+divert__files: []
 
 
-# .. envvar:: divert_files_group_list
+# .. envvar:: divert__group_files
 #
 # "Host group" list of files to divert.
-divert_files_group_list: []
+divert__group_files: []
 
 
-# .. envvar:: divert_files_host_list
+# .. envvar:: divert__host_files
 #
 # "Host" list of files to divert.
-divert_files_host_list: []
+divert__host_files: []
 
 
-# .. envvar:: divert_combined_files
+# .. envvar:: divert__combined_files
 #
 # Final list of files to divert.
-divert_combined_files: '{{ divert_files_list +
-                           divert_files_group_list +
-                           divert_files_host_list }}'
-
-
-# .. envvar:: divert_file_suffix
-#
-# Default file suffix to use when ``item.diverted`` has not been specified.
-divert_file_suffix: '.dpkg-orig'
+divert__combined_files: '{{ divert__files +
+                            divert__group_files +
+                            divert__host_files }}'

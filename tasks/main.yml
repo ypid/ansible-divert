@@ -1,10 +1,20 @@
 ---
 
+- import_role:
+    name: 'ansible_plugins'
+
 - name: Test for supported package managers
   assert:
     that: ansible_pkg_mgr in [
             'apt',
           ]
 
-- include_tasks: dpkg.yml
+- name: Create/Remove diversions with dpkg-divert
+  dpkg_divert:
+    path: '{{ item.path }}'
+    state: '{{ item.state|d("present") }}'
+    divert: '{{ item.divert|d(omit) }}'
+    delete: '{{ item.force|d(False) }}'
+    force: '{{ item.force|d(False) }}'
+  with_items: '{{ divert__combined_files }}'
   when: ansible_pkg_mgr == 'apt'
